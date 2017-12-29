@@ -57,6 +57,9 @@ Now you need to provide a container with the class `main`, we will use a div:
 </body>
 </html>
 ```
+
+Copy the `.htaccess` file and replace `index.html` with your main page if the file name is different
+
 Now you need a way to navigate through the website, we can easily add a link, like this:
 ``` html
 <a href="/help">Help</a>
