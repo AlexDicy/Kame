@@ -101,6 +101,13 @@ var kame = (function () {
             }
         },
         initPage: function () {
+            var baseTag = document.getElementsByTagName("base");
+            if (baseTag.length > 0) {
+                var tag = baseTag[0];
+                if (tag.hasAttribute("href")) {
+                    base = "/" + baseTag[0].getAttribute("href");
+                }
+            }
             this.loadPageFromPath();
         }
     };
@@ -114,13 +121,6 @@ var kame = (function () {
     document.body.addEventListener("click", function (event) {
         kame.handleClick(event);
     });
-
-    var baseTag = document.getElementsByTagName("base");
-    if (baseTag.length > 0) {
-        var tag = baseTag[0];
-        if (tag.hasAttribute("href")) {
-            base = "/" + baseTag[0].getAttribute("href");
-        }
-    }
+    
     return kame;
 })();
